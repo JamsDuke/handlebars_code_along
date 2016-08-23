@@ -1,37 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HandleBars</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Handlebars test</title>
+  <link rel="stylesheet" href="">
 </head>
 <body>
-  <h1>HandleBars Templates, FTW</h1>
+  <h1>Handlebars Templates, FTW</h1>
 
   <div id="entryOutput"></div>
 
-  <script id="entry-template" type="text/x-handlebars-template">
-    <div class="entry">
-      <h1>{{title}}</h1>
-      <div class="body">
-        {{body}}
-      </div>
-        <ul>
-          {{#each tags}}
-           <li>{{inc @index}} {{category}} : {{name}}</li>
-          {{/each}}
-        </ul>
-    </div>
-    {{> tagline }}
-  </script>
+  <h1>The Solar System</h1>
+  <ul>
+  {{#each planets}}
+    <li>{{name}} is a {{type}} planet (index {{@key}} in the array)</li>
+  {{/each}}
+  </ul>
 
-  <script id="tagline-partial" type="text/x-handlebars-template">
-    <div class="tagline">
-      <h4>Authored by {{author_first_name}} {{author_last_name}}</h4>
-      <div class="date">{{authored_date}}</div>
-    </div>
-  </script>
 
-<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-<script src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+  <script src="dist/app.js"></script>
 </body>
 </html>
