@@ -16,39 +16,15 @@ Handlebars.registerHelper("inc", function(value) {
 // attach our rendered HTML to the DOM
 $("#entryOutput").append(entryTemplate(entryData));
 
-var solarSystemData = {
-  planets: [
-    {
-      type: "rocky",
-      name: "Mercury"
-    },
-    {
-      type: "rocky",
-      name: "Venus"
-    },
-    {
-      type: "rocky",
-      name: "Earth"
-    },
-    {
-      type: "rocky",
-      name: "Mars"
-    },
-    {
-      type: "gas giant",
-      name: "Jupiter"
-    },
-    {
-      type: "gas giant",
-      name: "Saturn"
-    },
-    {
-      type: "ice giant",
-      name: "Uranus"
-    },
-    {
-      type: "ice giant",
-      name: "Neptune"
-    }
-  ]
-};
+var solarTemplate = require('../templates/article/solar.hbs');
+var solarSystemData = require('../templates/article/solar-data.js');
+
+$("#solarOutput").append(solarTemplate(solarSystemData));
+
+function ShowPlanets() {
+    $("#planets").toggleClass("hidden");
+}
+
+$("#displayPlanets").click(ShowPlanets);
+
+

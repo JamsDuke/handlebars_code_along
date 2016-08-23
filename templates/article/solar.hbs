@@ -1,0 +1,6 @@
+<button id="displayPlanets">Show Planets</button>
+<ul id="planets" class="hidden">
+  {{#each planets}}
+    <li>{{name}} is a {{type}} planet (index {{inc @key}} in the array)</li>
+  {{/each}}
+</ul>
